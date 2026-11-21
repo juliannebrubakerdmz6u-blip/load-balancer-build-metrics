@@ -1,0 +1,13 @@
+version: 2.1
+jobs:
+  which_bash:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - run:
+          name: show bash version
+          command: bash --version | head -1
+workflows:
+  main:
+    jobs:
+      - which_bash
